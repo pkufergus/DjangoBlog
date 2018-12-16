@@ -1,6 +1,12 @@
 #!/usr/bin/env python
+# coding=utf-8
 import os
 import sys
+
+print(sys.getdefaultencoding())
+import codecs
+sys.stdout = codecs.getwriter("utf-8")(sys.stdout.detach())
+print('中文')
 
 if __name__ == "__main__":
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "DjangoBlog.settings")
